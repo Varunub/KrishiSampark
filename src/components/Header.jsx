@@ -9,6 +9,8 @@ import { useStateValue } from './context/StateProvider'
 import { actionType } from './context/reducer'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import {app} from "../firebase.config"
+
+
 function Header(){
   const firebaseAuth=getAuth(app)
   const provider=new GoogleAuthProvider();
@@ -46,6 +48,7 @@ function Header(){
     });
   };
   return (
+    <>
     <header className='fixed z-50 w-screen  p-6 px-12'>
         <div className='hidden md:flex w-full  h-full items-center justify-between'>
             <Link to={"/"} className='flex items-center gap-2'>
@@ -201,7 +204,8 @@ function Header(){
         </div>
       </div>
     </header>
-  );
-}
+    </> 
+  )
+} 
 
 export default Header;
