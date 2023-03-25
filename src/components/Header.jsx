@@ -53,7 +53,7 @@ function Header(){
                 <img src={Logo} className=" w-36 object-cover" alt='logo'></img>
             </Link>
             <motion.ul initial={{opacity:0,x:200}} animate={{opacity:1,x:0}} exit={{opacity:0,x:200}} className="flex items-center gap-8 ml-96">
-              <Link>
+              <Link to={"/"}>
               <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
                 Home
               </li>
@@ -111,10 +111,27 @@ function Header(){
 
 
 
-        <div className='flex md:hidden w-full p-4'>
-              <Link to={"/"} className="flex items-center gap-2">
-          <img src={Logo} className="w-8 object-cover" alt="logo" />
+        <div className="flex items-center justify-between md:hidden w-full h-full ">
+        <div
+          className="relative flex items-center justify-center"
+          onClick={showCart}
+        >
+          <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
+          {cartItems && cartItems.length > 0 && (
+            <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+              <p className="text-xs text-white font-semibold">
+                {cartItems.length}
+              </p>
+            </div>
+          )}
+        </div>
+
+        <Link to={"/"} className="flex items-center gap-2">
+          <img src={Logo} className="w-32 object-cover" alt="logo" />
         </Link>
+
+
+
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
@@ -130,7 +147,7 @@ function Header(){
               exit={{ opacity: 0, scale: 0.6 }}
               className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-12 right-0"
             >
-              {user && user.email === "vetrivel.galaxy@gmail.com" && (
+              {user && user.email === "varunub1505@gmail.com" && (
                 <Link to={"/createItem"}>
                   <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
                     New Item <MdAdd />
@@ -139,30 +156,38 @@ function Header(){
               )}
 
               <ul className="flex flex-col ">
-                <li
+              <Link to={"/"}>
+              <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setMenu(false)}
                 >
                   Home
                 </li>
+              </Link>
+                
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setMenu(false)}
                 >
-                  Item
+                  <a href='#items'>Items</a>
                 </li>
+                <Link to={"/about"}>
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setMenu(false)}
                 >
                   About Us
                 </li>
+                </Link>
+                <Link to={"/services"}>
                 <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setMenu(false)}
                 >
                   Service
                 </li>
+                </Link>
+                
               </ul>
 
               <p
@@ -174,7 +199,7 @@ function Header(){
             </motion.div>
           )}
         </div>
-        </div>
+      </div>
     </header>
   );
 }

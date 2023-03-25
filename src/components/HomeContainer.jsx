@@ -8,7 +8,7 @@ const HomeContainer = () => {
         <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
         KrishiSampark is the online marketplace that helps you sell fresh and sustainable food to more customers. Create your profile, list your products, and choose your delivery options. Grow your business and join a community of farmers and consumers who care about food quality and security with KrishiSampark!
         </p>
-        <button type='button' className="bg-gradient-to-br md:w-auto from-green-400 to bg-green-500 w-full px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"><a href='items'>Order Now</a></button>
+        <button type='button' className="bg-gradient-to-br md:w-auto from-green-400 to bg-green-500 w-full px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"><a href='#items'>Order Now</a></button>
       </div>
       <div className='py-2 flex-1'>
         <img src={Fa1}></img>
