@@ -3,7 +3,7 @@ import F1 from "../img/f1.png";
 export const heroData = [
 
   {
-    id: 2,
+    id: 1,
     name: "Strawberries",
     decp: "Fresh Strawberries",
     price: "30",
@@ -27,8 +27,8 @@ export const categories = [
 
   {
     id: 2,
-    name: "Rice",
-    urlParamName: "rice",
+    name: "Cereals",
+    urlParamName: "Cereals",
   },
 
   {

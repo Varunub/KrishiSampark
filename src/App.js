@@ -7,6 +7,8 @@ import {AnimatePresence, frameData} from "framer-motion";
 import { useStateValue } from "./components/context/StateProvider";
 import { getAllItems } from "./utils/firebaseFunction";
 import { actionType } from "./components/context/reducer";
+import About from "./components/About";
+import Services from "./components/Services";
 function App() {
   const [{},dispatch]=useStateValue();
 
@@ -28,6 +30,8 @@ function App() {
        <Routes>
         <Route path="/*" element={<MainContainer></MainContainer>}></Route>
         <Route path="/createItem" element={<CreateContainer></CreateContainer>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/services" element={<Services></Services>}></Route>
        </Routes>
       </main>
     </div>

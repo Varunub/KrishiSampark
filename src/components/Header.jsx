@@ -50,21 +50,30 @@ function Header(){
         <div className='hidden md:flex w-full  h-full items-center justify-between'>
             <Link to={"/"} className='flex items-center gap-2'>
                
-                <img src={Logo} className="w-32 object-cover" alt='logo'></img>
+                <img src={Logo} className=" w-36 object-cover" alt='logo'></img>
             </Link>
             <motion.ul initial={{opacity:0,x:200}} animate={{opacity:1,x:0}} exit={{opacity:0,x:200}} className="flex items-center gap-8 ml-96">
+              <Link>
               <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
                 Home
               </li>
+              </Link>
+              
               <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                Items
+                <a href='#items'>Items</a>
               </li>
-              <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                About us
-              </li>
+              
+              <Link to={"/about"} className='flex items-center gap-2'>
+                <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+                  About us
+                </li>
+              </Link>
+              <Link to={"/services"} className='flex items-center gap-2'>
               <li className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
                 Services
               </li>
+              </Link>
+              
               <div className="relative flex items-center justify-center" onClick={showCart} >
                 <MdShoppingBasket className="text-textColor text-2xl cursor-pointer "/>
                 {cartItems && cartItems.length > 0 && (
