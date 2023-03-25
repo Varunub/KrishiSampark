@@ -27,6 +27,7 @@ const [once, setonce]=useState(0);
   useEffect(() => {
     addtocart();
   }, [items]);
+  
   return (
     <div
       ref={rowContainer}
@@ -71,7 +72,7 @@ const [once, setonce]=useState(0);
               </p>
               <div className="flex items-center gap-8">
                 <p className="text-lg text-headingColor font-semibold">
-                  <span className="text-sm text-red-500">$</span> {item?.price}/kg
+                  <span className="text-sm text-red-500">₹</span> {item?.price}/kg
                 </p>
               </div>
             </div>
